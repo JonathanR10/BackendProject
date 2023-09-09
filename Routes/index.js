@@ -1,11 +1,15 @@
 const express = require('express');
 const mainRouterApp = express.Router();
-const customerRouter = require('./customerRoutes');
+const nurseRouter = require('./nurseRoutes');
+const patientRouter = require('./patientRoutes');
+const urgencyRouter = require('./urgencyRoutes');
 
 function mainRouter(app)
 {
     app.use('/', mainRouterApp);
-    mainRouterApp.use('/customers', customerRouter);
+    mainRouterApp.use('/nurses', nurseRouter);
+    mainRouterApp.use('/patients', patientRouter);
+    mainRouterApp.use('/urgencies', urgencyRouter);
 }
 
 module.exports = mainRouter;
